@@ -1,10 +1,10 @@
 #!/usr/bin/perl
 
 #written by E. S. Bellis 12.30.2018
-#use this script to create a matrix of rice accessions using pairwise least cost paths distances that were calculated in gdistance for 431 locations rounded to nearest 0.1 degree
+####use this script to format a matrix of pairwise distances for rice accessions
 
-my $riceFile = $ARGV[0];
-my $distanceFile = $ARGV[1];
+my $riceFile = $ARGV[0];  #this file has columns describing id, latitude, and longitude for all rice accessions to include in matrix
+my $distanceFile = $ARGV[1]; #this file has columns with each row describing a pair of accessions with the following columns: ID_A,Lat_A, Lon_A, ID_B, Lat_B, Lon_B, Distance. ID_A or ID_B do not need to match accession name; they refer to a unique coordinate pair since many accessions have the same location
 
 #store for each rice accession its lat and lon rounded to nearest 0.1 degree
 open(IN, $riceFile);

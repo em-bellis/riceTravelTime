@@ -1,0 +1,22 @@
+#!/bin/bash
+#####this is a script used to submit costDistance.R to the Penn State queue
+
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=6:00:00
+#PBS -A jrl35_b_g_sc_default
+#PBS -l pmem=70gb
+
+cd $PBS_O_WORKDIR
+CHUNKNO=$(echo $CHUNK | sed -r 's/\// /g' | awk '{print $8}')
+
+exec < $CHUNK
+while read LINE
+do
+	AID=$(echo $LINE | awk '{print $1}')
+	ALAT=$(echo $LINE | awk '{print $2}')
+	ALON=$(echo $LINE | awk '{print $3}')
+	BID=$(echo $LINE | awk '{print $4}')
+	BLAT=$(echo $LINE | awk '{print $5}')
+	BLON=$(echo $LINE | awk '{print $6}')
+	Rscript --vanilla /storage/home/ezb336/scratch/riceCollab/run24/costDistance.R $AID $ALAT $ALON $BID $BLAT $BLON $CHUNKNO
+done

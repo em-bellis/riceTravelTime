@@ -1,6 +1,6 @@
 # riceTravelTime
 
-This repository contains code used to estimate human travel time over land and sea, as presented in Gutaker, R.M., Groen, S.C., Bellis, E.S. et al. Genomic history and ecology of the geographic spread of rice. Nat. Plants 6, 492–502 (2020). https://doi.org/10.1038/s41477-020-0659-6.
+This repository contains code used to estimate human travel time over land and sea, as presented in Gutaker, R.M., Groen, S.C., Bellis, E.S. et al. Genomic history and ecology of the geographic spread of rice. *Nat. Plants* 6, 492–502 (2020). https://doi.org/10.1038/s41477-020-0659-6.
 
 Since most of the code is pretty specific to running the 'gdistance' analysis on our local compute cluster for many thousands of pairwise distance calculations, I provide it mostly as an example of how the analysis was performed (it would need a lot of editing to get it going on your own system!)
 
